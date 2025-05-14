@@ -83,7 +83,7 @@ li {
   margin-top: 0;
   & > div {
     display: grid;
-    grid: 49.75% 49.75% / 1fr;
+    grid: 49.75% 49.75% / auto;
     gap: inherit;
     max-height: 100%;
     height: 100%;
