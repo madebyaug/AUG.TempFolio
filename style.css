@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: "Regular";
+  font-family: "Regular", sans-serif;
   font-size: 12px;
   line-height: 13px;
   text-transform: uppercase;
@@ -15,26 +15,10 @@
   text-align: left;
   text-decoration: none;
   text-rendering: optimizeLegibility;
-  background: none no-repeat scroll 0 0 transparent;
-  outline: none;
+  background: none;
   font-kerning: normal;
   box-sizing: border-box;
   list-style: none;
-}
-
-@font-face {
-  font-family: "Regular";
-  src: url("dom/DiaRegular.woff");
-  font-display: swap;
-}
-
-::selection {
-  background: #0000cc;
-  color: dimgray;
-}
-
-::-moz-selection {
-  background: #0000cc;
 }
 
 /* FLEX BOX */
@@ -81,18 +65,33 @@ li {
   gap: 3px;
   flex-flow: row;
   margin-top: 0;
-  & > div {
-    display: grid;
-    grid: 49.75% 49.75% / auto;
-    gap: inherit;
-    max-height: 100%;
-    height: 100%;
-  }
+}
+
+#c > div {
+  display: grid;
+  grid: 49.75% 49.75% / auto;
+  gap: inherit;
+  height: 100%;
 }
 
 /* DEFAULT STYLING */
 
-[tag="tint"] {
+@font-face {
+  font-family: "Regular";
+  src: url("dom/DiaRegular.woff");
+  font-display: swap;
+}
+
+::selection {
+  background: #0000cc;
+  color: dimgray;
+}
+
+::-moz-selection {
+  background: #0000cc;
+}
+
+.tint {
   filter: brightness(0.95);
 }
 
@@ -116,15 +115,13 @@ a:hover {
 
 body {
   height: 100vh;
-  width: 100%;
 }
 
 img,
 video,
 source {
   height: 100%;
-  width: auto;
-  object-fit: cover;
+  display: block;
 }
 
 main {
