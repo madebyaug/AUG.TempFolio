@@ -91,6 +91,21 @@ li {
   background: #0000cc;
 }
 
+/* width */
+::-webkit-scrollbar {
+  height: 3px;
+}
+
+/* Track
+::-webkit-scrollbar-track {
+  background: #fff;
+} */
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
 .tint {
   filter: brightness(0.95);
 }
@@ -122,7 +137,6 @@ video,
 source {
   height: 100%;
   display: block;
-  pointer-events: none;
 }
 
 main {
