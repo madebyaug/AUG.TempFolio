@@ -122,6 +122,7 @@ video,
 source {
   height: 100%;
   display: block;
+  pointer-events: none;
 }
 
 main {
