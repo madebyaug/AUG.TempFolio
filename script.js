@@ -1,15 +1,23 @@
-// On img hover,
-// replace span.ProjectTitle "text"
-// with TAG attribute text [Tag="text"]
+// function averageOf4Numbers(nr1, nr2, nr3, nr4) {
+//   const nr1 = 11;
+//   const nr2 = 9;
+//   const nr3 = 33;
+//   const nr4 = 28;
+//   let average = [`${nr1}`, `${nr2}`, `${nr3}`, `${nr4}`];
+//   calculateAverage(average);
+//   return average;
+// }
 
-const imgHover = title;
+// console.log(averageOf4Numbers);
 
-function getProjectTitle() {
-  if (imgHover == title) {
-    return `true`;
-  } else {
-    return `null`;
-  }
+function averageOf4Numbers(nr1, nr2, nr3, nr4) {
+  let sum = 0;
+  const average = [`${nr1}`, `${nr2}`, `${nr3}`, `${nr4}`];
+
+  for (let i = 0; i < average.length; i++) sum += average[i];
+  console.log(sum / average.length);
+  console.log(sum);
+  console.log(average.length);
 }
 
-console.log(getProjectTitle);
+averageOf4Numbers(2, 3, 4, 5);
