@@ -6,12 +6,15 @@ document.getElementById("err").innerHTML =
   "&rarr; curious if it&rsquo;ll ever get used. ;)";
 
 // ONCLICK CHANGES UI COLOR
+// STILL TRYING TO UNDERSTAND THE VARIOUS OPERATIONS (===) AND WRAPPING STATEMENTS TRUE/FALSE IN WRAP ()
+
 function darkmode(click) {
-  // STILL TRYING TO UNDERSTAND THE VARIOUS OPERATIONS (===) AND WRAPPING STATEMENTS TRUE/FALSE IN WRAP ()
   if (click === true) {
-    document.body.style.backgroundColor = "#1e1e1e";
-    document.body.style.color = "#F1F2F2";
+    // RED ON WHITE
+    document.body.style.backgroundColor = "#838383";
+    document.body.style.color = "#fefefe";
   } else {
+    // BLACK ON WHITE
     document.body.style.backgroundColor = "#fff";
     document.body.style.color = "#1e1e1e";
   }

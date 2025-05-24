@@ -108,7 +108,7 @@ ol li:first-child {
 
 ::selection {
   background: #0000cc;
-  color: dimgray;
+  color: #696969;
 }
 
 ::-moz-selection {
@@ -152,8 +152,7 @@ body {
 }
 
 img,
-video,
-source {
+video {
   height: 100%;
 }
 
