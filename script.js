@@ -8,14 +8,22 @@ document.getElementById("err").innerHTML =
 // ONCLICK CHANGES UI COLOR
 // STILL TRYING TO UNDERSTAND THE VARIOUS OPERATIONS (===) AND WRAPPING STATEMENTS TRUE/FALSE IN WRAP ()
 
-function darkmode(click) {
+function dark() {
+  document.body.style.backgroundColor = "#111111";
+  document.body.style.color = "#B4B4B4";
+}
+
+function light() {
+  document.body.style.backgroundColor = "#fff";
+  document.body.style.color = "#1e1e1e";
+}
+
+function chiaroscuro(click) {
   if (click === true) {
-    // RED ON WHITE
-    document.body.style.backgroundColor = "#838383";
-    document.body.style.color = "#fefefe";
-  } else {
     // BLACK ON WHITE
-    document.body.style.backgroundColor = "#fff";
-    document.body.style.color = "#1e1e1e";
+    dark();
+  } else {
+    // WHITE ON BLACK
+    light();
   }
 }

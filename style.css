@@ -22,6 +22,18 @@
   list-style: none;
 }
 
+@font-face {
+  font-family: "Regular";
+  src: url("dom/DiaRegular.woff");
+  font-display: swap;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
 /* DISPLAY ELEMENTS */
 
 #a1,
@@ -30,13 +42,9 @@
 #b1,
 #b2,
 #c,
+#d,
 #err {
-  padding: 0 15px;
-  margin: 15px 0;
   display: flex;
-  overflow-y: hidden;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 #c > div {
@@ -95,15 +103,31 @@ ol li:first-child {
 #c {
   grid-area: c;
   flex-flow: row;
-  margin-top: 0;
+  margin-top: 0 !important;
+  flex-direction: row !important;
 }
 
 /* DEFAULT STYLING */
 
-@font-face {
-  font-family: "Regular";
-  src: url("dom/DiaRegular.woff");
-  font-display: swap;
+#a1,
+#a2,
+#a3,
+#b1,
+#b2,
+#c,
+#err {
+  padding: 0 15px;
+  margin: 15px 0;
+  overflow-y: hidden;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#d {
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: inherit;
 }
 
 ::selection {
@@ -127,6 +151,10 @@ ol li:first-child {
   filter: brightness(0.95);
 }
 
+.blink {
+  animation: blinker 1.5s linear infinite;
+}
+
 a,
 a:visited,
 a:hover {
@@ -137,17 +165,10 @@ a:hover {
 }
 
 a:hover {
-  color: #111;
-  filter: blur(9px);
-
-  -webkit-transition: 400ms ease 100ms;
-  -moz-transition: 400ms ease 100ms;
-  transition: 400ms ease 100ms;
+  animation: blinker 0.4s ease 0.1s 1 forwards;
 }
 
 body {
-  background-color: #fff;
-  color: #1e1e1e;
   height: 100vh;
 }
 
@@ -156,8 +177,7 @@ video {
   height: 100%;
 }
 
-/* RESPONSIVE */
-/* HEIGHT SIZES */
+/* RESPONSIVE - HEIGHT SIZES */
 
 @media (min-height: 200px) {
   #c {
@@ -198,8 +218,7 @@ video {
   }
 }
 
-/* RESPONSIVE */
-/* WIDTH SIZES */
+/* RESPONSIVE - WIDTH SIZES */
 
 @media (max-width: 1200px) {
   #a3 {

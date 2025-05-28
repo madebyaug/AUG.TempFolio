@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="ico/favicon.ico" />
     <script defer src="script.js"></script>
   </head>
-  <body>
+  <body onload="chiaroscuro(false)">
     <main>
       <!--ERROR MESSAGE-->
       <div id="err"></div>
@@ -16,12 +16,16 @@
         <div>
           <p>
             (
-            <a href="#" onclick="darkmode(false); return true;">Aug.Services</a>
+            <a href="#" onclick="chiaroscuro(false); return true;"
+              >Aug.Services</a
+            >
             )
           </p>
           <p>
             (
-            <a href="#" onclick="darkmode(true); return false;">Aug.Services</a>
+            <a href="#" onclick="chiaroscuro(true); return false;"
+              >Aug.Services</a
+            >
             )
           </p>
         </div>
@@ -162,9 +166,8 @@
             src="img/10.png"
           />
         </div>
-        <img loading="lazy" alt="Aug Sans" src="img/12@2x.png" />
         <img loading="lazy" alt="#Runfor Sancony" src="img/13.png" />
-
+        <img loading="lazy" alt="Aug Sans" src="img/12@2x.png" />
         <img loading="lazy" alt="Devin Morrison" src="img/14.jpg" />
       </picture>
     </main>
