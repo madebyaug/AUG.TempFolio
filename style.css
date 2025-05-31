@@ -54,9 +54,13 @@
   height: 100%;
 }
 
-li {
+li,
+ul,
+ol {
   display: inline;
   color: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 main {
@@ -128,6 +132,8 @@ ol li:first-child {
   align-items: center;
   width: 100vw;
   height: inherit;
+  font-size: medium;
+  line-height: 1.35rem;
 }
 
 ::selection {
