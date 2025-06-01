@@ -18,6 +18,11 @@ function light() {
   document.body.style.color = "#1e1e1e";
 }
 
+function err() {
+  document.body.style.backgroundColor = "#0000cc";
+  document.body.style.color = "#696969";
+}
+
 function chiaroscuro(click) {
   if (click === true) {
     // BLACK ON WHITE
