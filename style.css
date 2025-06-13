@@ -28,7 +28,13 @@
   font-display: swap;
 }
 
-@keyframes blinker {
+@keyframes blinkerA {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes blinkerB {
   50% {
     opacity: 0;
   }
@@ -41,46 +47,46 @@
 #a3,
 #b1,
 #b2,
-#c,
-#d,
-#err {
+#two,
+#error,
+.column {
   display: flex;
 }
 
-#c > div {
+#one {
   display: grid;
-  grid: 49.75% 49.75% / auto;
-  gap: inherit;
-  height: 100%;
+  grid-template-areas: "a1 b1 a2 b2 a3";
+  grid-template-columns: auto 1fr auto 1fr auto;
 }
+
+/* .column {
+  display: grid;
+  grid: 50% 50% / auto;
+} */
 
 li,
 ul,
 ol {
+  /* remove this display on large screens 1600px*/
   display: inline;
   color: inherit;
   font-size: inherit;
   line-height: inherit;
 }
 
-main {
-  display: grid;
-  grid-template-areas: "a1 b1 a2 b2 a3" "c c c c c";
-  grid-template-columns: auto 1fr auto 1fr auto;
-  grid-template-rows: auto 1fr;
-  height: inherit;
-}
-
-ul li:first-child,
-ol li:first-child {
-  display: block;
-}
-
-#err {
+#easterEgg {
   display: none;
 }
 
 /* GRID AREA */
+
+.a {
+  grid-area: a;
+}
+
+.b {
+  grid-area: b;
+}
 
 #a1 {
   grid-area: a1;
@@ -104,11 +110,19 @@ ol li:first-child {
   gap: 13px;
 }
 
-#c {
-  grid-area: c;
-  flex-flow: row;
-  margin-top: 0 !important;
-  flex-direction: row !important;
+div#one {
+  grid-area: one;
+}
+
+div#two {
+  grid-area: two;
+}
+
+main {
+  display: grid;
+  grid-template-areas: "one" "two";
+  grid-template-rows: 1fr 88%;
+  height: inherit;
 }
 
 /* DEFAULT STYLING */
@@ -118,16 +132,53 @@ ol li:first-child {
 #a3,
 #b1,
 #b2,
-#c,
-#err {
+#two,
+#easterEgg {
   padding: 0 15px;
   margin: 15px 0;
-  overflow-y: hidden;
   flex-direction: column;
   justify-content: space-between;
 }
 
-#d {
+#two {
+  flex-flow: row;
+  border: 1px solid cyan;
+  height: 100%;
+  gap: inherit;
+  overflow-y: scroll;
+  justify-content: unset;
+  margin-top: 0;
+  padding: 0;
+  /* margin: 0;
+  overflow-x: auto;
+  overflow-y: unset;
+  justify-content: initial; */
+  /* background-color: #696969; */
+}
+
+div.column {
+  /* flex-flow: column;
+  height: inherit;
+  gap: inherit; */
+  border: 1px solid yellow;
+  /* flex: none;
+  width: 100%;
+  max-width: 50%; */
+  display: grid;
+  grid-template-areas: "a" "b";
+  grid-template-rows: 50% 50%;
+  grid-template-columns: auto;
+  flex: none;
+}
+
+.column img,
+.column video {
+  aspect-ratio: 16 / 9;
+  border: 1px solid magenta;
+}
+
+#error {
+  padding: 0 15px;
   justify-content: center;
   align-items: center;
   width: 100vw;
@@ -145,9 +196,9 @@ ol li:first-child {
   background: #0000cc;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   height: 3px;
-}
+} */
 
 ::-webkit-scrollbar-thumb {
   background: transparent;
@@ -166,45 +217,59 @@ a:visited,
 a:hover {
   font: inherit;
   color: inherit;
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: inherit;
   cursor: pointer;
 }
 
+/* a:link,
+div[id="c"] img,
+video {
+  animation: blinkerA 0.4s ease 0.1s 1 forwards;
+} */
+
 a:hover {
-  animation: blinker 0.4s ease 0.1s 1 forwards;
+  animation: blinkerB 0.4s ease 0.1s 1 forwards;
 }
 
 body {
   height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 img,
 video {
-  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  /* object-fit: cover; */
+  /* max-width: 100%; */
+  /* opacity: 25%; */
+  display: block;
 }
 
 /* RESPONSIVE - HEIGHT SIZES */
 
-@media (min-height: 200px) {
-  #c {
+/* @media (min-height: 200px) {
+  #two {
     gap: 1px;
   }
 }
 
 @media (min-height: 400px) {
-  #c {
+  #two {
     gap: 2px;
   }
 }
 
 @media (min-height: 800px) {
-  #c {
+  #two {
     gap: 3px;
   }
-}
+} */
 
 @media (max-height: 300px) {
-  #err {
+  #easterEgg {
     display: block;
   }
 
@@ -213,18 +278,26 @@ video {
   #a3,
   #b1,
   #b2,
-  #c {
+  #two {
     display: none;
   }
 }
 
 @media (max-height: 430px) {
-  #c > div {
+  #two > div {
     grid: 100% 100% / auto auto;
   }
 }
 
 /* RESPONSIVE - WIDTH SIZES */
+
+@media (max-width: 240px) {
+  li,
+  ul,
+  ol {
+    display: list-item;
+  }
+}
 
 @media (max-width: 1200px) {
   #a3 {
