@@ -1,40 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>AUG.SVCS &rarr; NEW.INST=TBD</title>
+    <title>AUG.SERVICES</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aug Services is the independent creative practice of August Foreman, specializing in design, typography, and direction across media."
+    />
     <link rel="icon" href="data:," />
     <link rel="icon" type="image/x-icon" href="../ico/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <!-- <link rel="stylesheet" type="text/css" href="style(2).css" /> -->
     <script defer src="script.js"></script>
   </head>
-  <body onload="light()">
+  <body>
     <main>
-      <!--ERROR MESSAGE-->
-      <div id="easterEgg"></div>
+      <!--MESSAGE-->
+      <div class="message" id="easterEgg"></div>
       <!--TAB BAR-->
-      <div id="one">
+      <header>
         <div id="a1">
           <div>
             <h1>
               <!--RANDOMISOR BUTTON - HAVE RANDOM IMAGES POPULATE ON PAGE-->
 
               (
-              <a
-                href="#"
-                data-title="Generic"
-                onclick="chiaroscuro(false); return true;"
+              <a href="#" data-title="Locate the hidden secret???"
                 >Aug.Services</a
               >
               )
             </h1>
             <h1>
               (
-              <a
-                href="#"
-                data-title="grayscale"
-                onclick="chiaroscuro(true); return false;"
+              <a id="Chiaroscuro" href="#" data-title="Chiaroscuro"
                 >Aug.Services</a
               >
               )
@@ -44,20 +41,25 @@
         </div>
         <div id="b1">
           <div>
-            <h1>( Profile: August Foreman )</h1>
-            <ol type="A">
+            <h1>( August Foreman )</h1>
+            <ul>
+              <li>
+                <a id="aboutMeBtn" data-title="Information" href="#"
+                  >&#8600;&nbspAbout.Me,</a
+                >
+              </li>
               <li>
                 <a
                   target="_blank"
                   data-title="Case Studies"
-                  href="https://docsend.com/view/eprbjqgfh6k8zpzq"
+                  href="https://docsend.com/v/xk74s/augservices"
                   >&#8600;&nbspPortfolio.PDF,</a
                 >
               </li>
               <li>
                 <a
                   target="_blank"
-                  data-title="Field Summary"
+                  data-title="Work Summary"
                   href="https://docsend.com/v/xk74s/cv"
                   >&#8600;&nbspCV.PDF,</a
                 >
@@ -70,11 +72,11 @@
                   >&#8600;&nbspContact.Me</a
                 >
               </li>
-            </ol>
+            </ul>
           </div>
           <div>
-            <h1>( Services )</h1>
-            <ol type="none">
+            <h1>( <span>Status: Freelance</span> )</h1>
+            <ol>
               <li>Art,</li>
               <li>Design,</li>
               <li>Direction,</li>
@@ -90,8 +92,8 @@
               (
               <a
                 target="_blank"
-                data-title="History Log"
-                href="https://www.linkedin.com/in/madebyaug/"
+                data-title="Screenshots"
+                href="https://www.instagram.com/madebyaug/"
                 >Aug.Services</a
               >
               )
@@ -100,7 +102,7 @@
               (
               <a
                 target="_blank"
-                data-title="Practicum"
+                data-title="Github"
                 href="https://github.com/madebyaug"
                 >Aug.Services</a
               >
@@ -111,8 +113,8 @@
         </div>
         <div id="b2">
           <div>
-            <h1>( Status: Freelance )</h1>
-            <ol type="none">
+            <h1>( <span>Agency Log</span> )</h1>
+            <ol>
               <li>Paramount,</li>
               <li>MTV,</li>
               <li>Showtime,</li>
@@ -122,12 +124,14 @@
               <li>Vox Media,</li>
               <li>Loyalkaspor,</li>
               <li>Complex Networks,</li>
-              <li>Runway</li>
+              <li>And Selected Clients</li>
             </ol>
           </div>
-          <h1>
-            ( Return: &ldquo;<span id="projectTitle">Browse All</span>&rdquo; )
-          </h1>
+          <div>
+            <h1>( <span>Return</span> )</h1>
+            <p id="defaultTitle"></p>
+            <p id="projectTitle"></p>
+          </div>
         </div>
         <div id="a3">
           <div>
@@ -135,7 +139,7 @@
               (
               <a
                 target="_blank"
-                data-title="Mood board"
+                data-title="Moodboard"
                 href="https://www.pinterest.com/madebyaug/"
                 >Aug.Services</a
               >
@@ -145,7 +149,7 @@
               (
               <a
                 target="_blank"
-                data-title="Playlist"
+                data-title="Tracklist"
                 href="https://music.apple.com/profile/madebyaug"
                 >Aug.Services</a
               >
@@ -154,72 +158,189 @@
           </div>
           <h1>[ &rarr; &rarr; ]</h1>
         </div>
-      </div>
+      </header>
       <!--PROJECTS-->
-      <div id="two">
-        <img
-          loading="lazy"
-          class="tint"
-          alt="CW: All American, S6"
-          src="img/1@2x.png"
-        />
-        <img
-          loading="lazy"
-          alt="Devin Morrison: Dreamsoul Online"
-          src="img/2.png"
-        />
-        <img loading="lazy" alt="Nike: Respect the Ones" src="img/8.png" />
-        <img loading="lazy" alt="Rubi Rose: Rose Gang" src="img/4.png" />
-
-        <div class="column">
-          <video
-            class="a"
-            data-title="A Study on Circles"
-            loop
-            muted
-            autoplay
-            preload="metadata"
-          >
-            <source type="video/mp4" src="img/6.mov" />
-          </video>
-          <img class="b" loading="lazy" alt="Month In Lyrics" src="img/5.gif" />
-        </div>
-
-        <img
-          loading="lazy"
-          alt="MTV: Teen Mom Family Reunion, S1"
-          src="img/7.png"
-        />
-        <img
-          loading="lazy"
-          alt="Phyllis Hyman: Fallen Angle"
-          src="img/8@2x.png"
-        />
-        <img loading="lazy" alt="Kool-Aide: Create A Beat" src="img/9@2x.png" />
-
-        <img
-          loading="lazy"
-          alt="Devin Morrison: Sarah Sahara, EP"
-          src="img/3.png"
-        />
-
-        <div class="column">
+      <footer id="media">
+        <div id="aboutMe"></div>
+        <div id="content">
           <img
-            loading="lazy"
             class="tint"
-            alt="Best Annotations"
-            src="img/11.gif"
+            loading="lazy"
+            alt="CW: All American"
+            src="img/1@2x.png"
           />
           <img
             loading="lazy"
-            alt="Miller Lite: Better Together"
-            src="img/10.png"
+            alt="Devin Morrison: Dreamsoul Online"
+            src="img/2.png"
           />
+          <img class="50" loading="lazy" alt="Offline" src="img/3@2x.png" />
+          <img loading="lazy" alt="Beetlejuice" src="img/4@1.5x.png" />
+          <img
+            loading="lazy"
+            alt="Devin Morrison: Sarah Sahara, EP"
+            src="img/5.png"
+          />
+          <img loading="lazy" alt="Rose Gang" src="img/6.png" />
+          <img
+            loading="lazy"
+            class="75"
+            alt="MTV: Spirit of MLK"
+            src="img/7@2x.png"
+          />
+          <div class="column">
+            <video
+              data-title="A Study on Circles"
+              loop
+              muted
+              autoplay
+              preload="metadata"
+            >
+              <source type="video/mp4" src="img/8.mp4" />
+            </video>
+            <img
+              class="b"
+              loading="lazy"
+              alt="Genius: Month In Lyrics"
+              src="img/9.gif"
+            />
+          </div>
+          <img class="75" loading="lazy" alt="The Greedy" src="img/10@2x.png" />
+          <img
+            class="50"
+            loading="lazy"
+            alt="Failed Company Exec Card"
+            src="img/11@2x.png"
+          />
+          <img
+            loading="lazy"
+            alt="MTV: Teen Mom Family Reunion, S1"
+            src="img/12.png"
+          />
+          <img
+            class="75"
+            loading="lazy"
+            alt="Kool-Aide: Create-A-Beat"
+            src="img/13@2x.png"
+          />
+          <img
+            loading="lazy"
+            alt="Phyllis Hyman: Fallen Angel"
+            src="img/14@2x.png"
+          />
+          <img
+            loading="lazy"
+            class="tint 50"
+            alt="Or Nothing"
+            src="img/15.jpg"
+          />
+          <img
+            class="75"
+            loading="lazy"
+            alt="Devin Morrison: Anita Valentine Video"
+            src="img/16.png"
+          />
+          <div class="column">
+            <img
+              loading="lazy"
+              class="tint"
+              alt="Genius: Best Annotations"
+              src="img/17.gif"
+            />
+            <img
+              loading="lazy"
+              alt="Miller Lite: Better Together"
+              src="img/18.png"
+            />
+          </div>
+          <img loading="lazy" alt="Devin Morrison: Seldom" src="img/19.jpg" />
+
+          <img
+            class="75"
+            loading="lazy"
+            alt="Saucony: #Runfor"
+            src="img/20.gif"
+          />
+
+          <img loading="lazy" alt="Genius x Fuse" src="img/21.png" />
+          <img
+            class="50"
+            loading="lazy"
+            alt="Smiling At Disater"
+            src="img/22.png"
+          />
+          <div class="column">
+            <img
+              loading="lazy"
+              class="tint"
+              alt="MTV2: Hottest MC’s In the Game"
+              src="img/23.png"
+            />
+            <img
+              loading="lazy"
+              alt="Freeform: 25 Days of Christmas"
+              src="img/24@2x.png"
+            />
+          </div>
+          <img class="75" loading="lazy" alt="Desecration" src="img/25.gif" />
+          <img loading="lazy" alt="Aug Sans: Trial" src="img/26@2x.png" />
+          <div class="column">
+            <video
+              class="saturate"
+              data-title="Catwalk"
+              loop
+              muted
+              autoplay
+              preload="metadata"
+            >
+              <source type="video/mp4" src="img/27a.webm" />
+              <source type="video/mp4" src="img/27b.mp4" />
+            </video>
+            <img
+              loading="lazy"
+              alt="Energizer: Overtime Arena"
+              src="img/28.png"
+            />
+          </div>
+
+          <img loading="lazy" alt="MTV: Wild ‘N Out, S10" src="img/29.png" />
+          <img
+            loading="lazy"
+            alt="Back On Figg: We Outside-Outside"
+            src="img/30.png"
+          />
+          <img
+            class="75"
+            loading="lazy"
+            alt="Nike: Respect the Ones"
+            src="img/31.png"
+          />
+          <img
+            class="00"
+            loading="lazy"
+            alt="Bourne Worldwide"
+            src="img/32@1.25x.png"
+          />
+          <img
+            class="50"
+            loading="lazy"
+            alt="Aug Svcs: Goods"
+            src="img/33.png"
+          />
+          <img
+            loading="lazy"
+            alt="Devin Morrison: Anita Valentine, EP"
+            src="img/34.png"
+          />
+          <img
+            class="75"
+            loading="lazy"
+            alt="MTV: Movie Awards, 2018"
+            src="img/35@3x.png"
+          />
+          <div id="quotes"></div>
         </div>
-        <img loading="lazy" alt="Sancony: #Runfor" src="img/13.png" />
-        <img loading="lazy" alt="Aug Sans: Trial" src="img/12.gif" />
-        <img loading="lazy" alt="Devin Morrison: Seldom, RT" src="img/14.jpg" />
-      </div>
+      </footer>
     </main>
   </body>
 </html>
