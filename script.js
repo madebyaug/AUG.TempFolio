@@ -1,23 +1,23 @@
-// Dark mode
-const heading = document.getElementById("Chiaroscuro");
-let chiaroscuro = false;
-// Add event listener to each H1
-// headings.forEach((heading) => {
-heading.addEventListener("click", (event) => {
-  chiaroscuro = !chiaroscuro;
-  event.preventDefault();
-  if (chiaroscuro) {
-    dark();
-  } else {
-    light();
-  }
-});
+// Defines Dark/Light mode button
+// let $themeBtn = document.getElementById("Chiaroscuro");
+// let chiaroscuro = false;
 
-// Defines 404 Page
+// Dark/Light mode
+// $themeBtn.addEventListener("click", (event) => {
+//   chiaroscuro = !chiaroscuro;
+//   event.preventDefault();
+//   if (chiaroscuro) {
+//     dark();
+//   } else {
+//     light();
+//   }
+// });
+
+// Defines "404" Page
 let $404 = document.getElementById("error");
 
-// Defines the "aboutMe" Id
-const aboutMe = document.getElementById("aboutMe");
+// Defines "aboutMe" Id
+let aboutMe = document.getElementById("aboutMe");
 
 // Structures HTML within the "aboutMe" Id
 aboutMe.innerHTML = `
@@ -38,52 +38,53 @@ aboutMe.innerHTML = `
 // timeDisplay.innerHTML = time;
 
 // On hover, A links animate
-const aLinks = document.querySelectorAll("a");
-aLinks.forEach((link) => {
-  link.addEventListener("mouseover", () => {
-    link.style.animation = "none";
-    void link.offsetWidth; // Force reflow
-    link.style.animation = "blinker 0.3s ease 0s 1 forwards";
+const $a = document.querySelectorAll("a");
+$a.forEach((element) => {
+  element.addEventListener("mouseover", () => {
+    element.style.animation = "none";
+    void element.offsetWidth; // Force reflow
+    element.style.animation = "blinker 0.3s ease 0s 1 forwards";
   });
 });
 
-// Grey ON Black
+// Grey on Black
 function dark() {
   document.body.style.backgroundColor = "#111111";
   document.body.style.color = "#B4B4B4";
-  aLinks.forEach((element) => {
+  $a.forEach((element) => {
     element.style.textDecorationThickness = "0.5px";
     element.style.textDecorationColor = "#B4B4B4";
   });
 }
 
-// Black ON White
+// Black on White
 function light() {
   document.body.style.backgroundColor = "#fff";
   document.body.style.color = "#1e1e1e";
-  aLinks.forEach((link) => {
-    link.style.textDecorationThickness = "1px";
-    link.style.textDecorationColor = "#1e1e1e";
+  $a.forEach((element) => {
+    element.style.textDecorationThickness = "1px";
+    element.style.textDecorationColor = "#1e1e1e";
   });
 }
 
-// Grey ON Blue
+// Grey on Blue
 function error() {
   document.body.style.backgroundColor = "#0000cc";
   document.body.style.color = "#696969";
 }
 
-// Defines specific media element to target all
+// Defines specific and all Media
 const getTitle = document.querySelectorAll("img, video, a");
 const mediaAll = document.querySelectorAll("img, video");
 
 window.onload = () => {
   if (!$404) {
-    error();
     light();
+  } else {
+    error();
   }
 
-  //
+  // Media elements non-blur and -offset Delay
   mediaAll.forEach((element) => {
     setTimeout(() => {
       element.style.filter = `blur(0px)`;
@@ -107,19 +108,19 @@ titleDisplay.textContent = defaultTitle;
 
 // Quote Arry
 const quoteArry = [
-  `Quality ain’t rushed; it’s Practiced.`,
-  `Persuaded by a dream, immortalized through art.`,
-  `A burnt bridge keeps the food warm.`,
-  `Runway Thots. Boujee Models. Brutalist Design.`,
-  `Not everything has a place, but everything has a purpose.`,
-  `The most convincing lies are the ones we tell ourself.`,
-  `Curate to cultivate vision.`,
-  `A tragic story's end bred carelessness.`,
-  `A creative who never pushes boundaries will keep telling the same stories.`,
-  `The world may take reputation – not character.`,
-  `Humility is a weakness.`,
+  // `Quality ain’t rushed; it’s Practiced.`,
+  // `Persuaded by a dream, immortalized through art.`,
+  // `A burnt bridge keeps the food warm.`,
+  // `Runway Thots. Boujee Models. Brutalist Design.`,
+  // `Not everything has a place, but everything has a purpose.`,
+  // `The most convincing lies are the ones we tell ourself.`,
+  // `Curate to cultivate vision.`,
+  // `A tragic story's end bred carelessness.`,
+  // `A creative who never pushes boundaries will keep telling the same stories.`,
+  // `The world may take reputation – not character.`,
+  `Pride > Humility.`,
   `Delete your old work.`,
-  `An artist without care and affection, is a child with love and affection`,
+  `An artist without care and affection is a child without love and affection`,
 ];
 
 // Rng Message Selector
@@ -181,18 +182,29 @@ $clue.addEventListener("click", (e) => {
   console.log("The brush hasn’t gone beyond a second pass.");
 });
 
-// Defines the "aboutMeBtn" Id
+// Defines the "aboutMeBtn", "footer", "width"
 const aboutMeBtn = document.getElementById("aboutMeBtn");
-
-// aboutMe Width
-let width = "20vw";
+const $footer = document.querySelector("footer");
+// Defines "Click" boolean
 let click = false;
+let width;
 
-// aboutMe Default
-aboutMe.style.width = `${width}`;
+// Defines Width
+function setLayoutWidth() {
+  width = window.innerWidth < 800 ? "50vw" : "20vw";
+  aboutMe.style.width = width;
+
+  if (!click) {
+    $footer.style.marginLeft = `-${width}`;
+  }
+}
+
+setLayoutWidth();
+
+// Listen for window resize
+window.addEventListener("resize", setLayoutWidth);
 
 //
-const $footer = document.querySelector("footer");
 $footer.style.marginLeft = `-${width}`;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -206,5 +218,10 @@ document.addEventListener("DOMContentLoaded", () => {
 // Defines "aboutMeBtn" click
 aboutMeBtn.addEventListener("click", () => {
   click = !click;
-  $footer.style.marginLeft = click ? `0` : `-${width}`;
+
+  if (click === true) {
+    $footer.style.marginLeft = "0";
+  } else {
+    $footer.style.marginLeft = `-${width}`;
+  }
 });

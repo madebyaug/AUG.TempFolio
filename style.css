@@ -62,13 +62,13 @@ main,
   display: flex;
 }
 
+header {
+  display: grid;
+}
+
 #easterEgg,
 #defaultTitle {
   display: none;
-}
-
-header {
-  display: grid;
 }
 
 li,
@@ -117,12 +117,6 @@ footer {
   grid-area: two;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  height: var(--full);
-}
-
 /* DEFAULT STYLING */
 :root {
   cursor: url("dom/scrollCursor.cur") 8 8, auto;
@@ -131,6 +125,7 @@ main {
   --full: 100%;
 }
 
+/* DEFAULT SELECTION */
 ::selection {
   background: #0000cc;
   color: #696969;
@@ -138,16 +133,13 @@ main {
 
 ::-moz-selection {
   background: #0000cc;
+  color: #696969;
 }
 
 /* scrollbar */
 ::-webkit-scrollbar-thumb {
   background: transparent;
 }
-
-/* ::-webkit-scrollbar {
-  height: -1px;
-} */
 
 #a1,
 #a2,
@@ -180,8 +172,8 @@ section {
 }
 
 #aboutMe p:only-of-type,
-.message h1,
-#aboutMe p + p {
+#aboutMe p + p,
+.message h1 {
   padding-left: var(--thirty);
   hanging-punctuation: first;
 }
@@ -199,12 +191,9 @@ section {
 #quotes {
   writing-mode: vertical-rl;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: end;
   height: var(--full);
-  & div {
-    display: flex;
-    gap: 2px;
-  }
+  gap: 2px;
 }
 
 /* https://www.ascii-code.com */
@@ -221,8 +210,8 @@ section {
   display: grid;
   grid-template-rows: 1fr 1fr;
   height: var(--full);
-  aspect-ratio: 8 / 9; /* optional: keeps width proportional to height */
-  flex-shrink: 0; /* prevent shrinking */
+  aspect-ratio: 8 / 9; /* had some help here */
+  flex-shrink: 0; /* had some help here */
   & video {
     height: 100.25%;
   }
@@ -230,7 +219,7 @@ section {
 
 .column * {
   width: var(--full);
-  object-fit: cover; /* or `contain` depending on your need */
+  object-fit: cover;
   display: block;
 }
 
@@ -241,7 +230,7 @@ section {
 }
 
 .tint {
-  filter: brightness(0.97);
+  filter: brightness(1);
 }
 
 .saturate {
@@ -301,9 +290,14 @@ img,
 video {
   height: var(--full); /* match .two’s height (which is 80% of parent) */
   width: auto; /* maintain aspect ratio */
-  object-fit: contain; /* prevents distortion */
-  flex-shrink: 0; /* prevent images from shrinking in flex layout */
+  object-fit: contain; /*prevents distortion*/
+  flex-shrink: 0;
   scroll-snap-align: start;
+}
+
+main {
+  flex-direction: column;
+  height: var(--full);
 }
 
 mark {
@@ -339,7 +333,7 @@ mark {
   }
 }
 
-@media (min-height: 900px) {
+@media (min-height: 1000px) {
   footer {
     flex: auto;
   }
@@ -377,7 +371,7 @@ mark {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 420px) {
   header {
     grid-template-areas: "a1 b1";
     grid-template-columns: auto 1fr;
