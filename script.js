@@ -1,18 +1,3 @@
-// Defines Dark/Light mode button
-// let $themeBtn = document.getElementById("Chiaroscuro");
-// let chiaroscuro = false;
-
-// Dark/Light mode
-// $themeBtn.addEventListener("click", (event) => {
-//   chiaroscuro = !chiaroscuro;
-//   event.preventDefault();
-//   if (chiaroscuro) {
-//     dark();
-//   } else {
-//     light();
-//   }
-// });
-
 // Defines "404" Page
 let $404 = document.getElementById("error");
 
@@ -27,15 +12,6 @@ aboutMe.innerHTML = `
   </div>
 <p>&copy;2025 AUG SVCS, LLC. All rights protected by my lord and savior. (\u00A0Imprint: Site <a data-title="Developer" href="https://madebyaug.com">MadeByAug</a>, deployed on <a data-title="CMS" href="https://github.com/madebyaug/2025.AUG-TempPort">GitHub</a>, and Typeset in <a data-title="Typography" href="https://www.schick-toikka.com/dia">Dia Regular</a>.\u00A0)</p>
 `;
-
-// <p><time></time></p>
-
-// Time
-// const date = new Date();
-// const time = date.toLocaleDateString();
-// const timeDisplay = document.querySelector("time");
-// // timeDisplay.style.background = "green";
-// timeDisplay.innerHTML = time;
 
 // On hover, A links animate
 const $a = document.querySelectorAll("a");
@@ -108,19 +84,21 @@ titleDisplay.textContent = defaultTitle;
 
 // Quote Arry
 const quoteArry = [
-  // `Quality ain’t rushed; it’s Practiced.`,
-  // `Persuaded by a dream, immortalized through art.`,
-  // `A burnt bridge keeps the food warm.`,
-  // `Runway Thots. Boujee Models. Brutalist Design.`,
-  // `Not everything has a place, but everything has a purpose.`,
-  // `The most convincing lies are the ones we tell ourself.`,
-  // `Curate to cultivate vision.`,
-  // `A tragic story's end bred carelessness.`,
-  // `A creative who never pushes boundaries will keep telling the same stories.`,
-  // `The world may take reputation – not character.`,
+  `Quality ain’t rushed. It’s Practiced.`,
+  `Persuaded by a dream to be immortalized through art.`,
+  `A burnt bridge keeps the food warm.`,
+  `Simplicity = Innovation`,
+  `Runway Thots. Boujee Models. Brutalist Design.`,
+  `Not everything has a place, but everything has a purpose.`,
+  `The most convincing lies are the ones we tell ourself.`,
+  `Never conform, always adapt.`,
+  `Curate: Cultivate your vision.`,
+  `A tragic story’s end bred pure carelessness.`,
+  `A creative who never pushes boundaries will keep telling the same stories.`,
+  `The world may take your reputation — not your character.`,
   `Pride > Humility.`,
-  `Delete your old work.`,
-  `An artist without care and affection is a child without love and affection`,
+  `Restart: Delete old work.`,
+  `An artist without literature and philosophy is a child without love and affection`,
 ];
 
 // Rng Message Selector
@@ -160,15 +138,7 @@ getTitle.forEach((media) => {
   });
 });
 
-// Defines Highlight
-const $mark = document.querySelectorAll("mark");
-// $mark.forEach((element) => {
-// element.style.backgroundColor = "lightgray";
-// const colours = ["dimgray", "red"];
-// });
-
 // Displays and error message when browser threshold (Height > 300px) is reached
-// The a link isn't working
 const getEasterEgg = document.getElementById("easterEgg");
 getEasterEgg.innerHTML = `
   <h1>( easterEgg )</h1>
@@ -182,16 +152,17 @@ $clue.addEventListener("click", (e) => {
   console.log("The brush hasn’t gone beyond a second pass.");
 });
 
-// Defines the "aboutMeBtn", "footer", "width"
+// Defines "aboutMeBtn" and "footer"
 const aboutMeBtn = document.getElementById("aboutMeBtn");
 const $footer = document.querySelector("footer");
-// Defines "Click" boolean
+
+// Defines "Click" boolean and "width"
 let click = false;
 let width;
 
-// Defines Width
+// Defines Browser
 function setLayoutWidth() {
-  width = window.innerWidth < 800 ? "50vw" : "20vw";
+  width = window.innerWidth < 800 || window.innerHeight < 450 ? "50vw" : "20vw";
   aboutMe.style.width = width;
 
   if (!click) {
@@ -199,12 +170,13 @@ function setLayoutWidth() {
   }
 }
 
+// Called when Browser resizes
 setLayoutWidth();
 
-// Listen for window resize
+// Listens for Browser resize
 window.addEventListener("resize", setLayoutWidth);
 
-//
+// Defines "footer" default width
 $footer.style.marginLeft = `-${width}`;
 
 document.addEventListener("DOMContentLoaded", () => {

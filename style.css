@@ -267,7 +267,7 @@ header {
   flex: 2;
   gap: var(--thirty);
   padding: 2px 0;
-  min-height: 100px;
+  min-height: 125px;
 }
 
 footer {
@@ -302,8 +302,11 @@ main {
 
 mark {
   /* font-family: "bold"; */
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  background: violet;
+  color: #000;
   letter-spacing: -0.2px;
+  padding: 0 2px;
 }
 
 /* RESPONSIVE - HEIGHT SIZES */
@@ -324,6 +327,9 @@ mark {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: initial;
     aspect-ratio: 32 / 9;
+    & video {
+      height: 100%;
+    }
   }
 
   img[src$="jpg"],
@@ -371,7 +377,7 @@ mark {
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 440px) {
   header {
     grid-template-areas: "a1 b1";
     grid-template-columns: auto 1fr;
