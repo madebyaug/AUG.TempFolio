@@ -1,1 +1,1 @@
-In May 2025, I made the choice to develop a <del>temporary</del> <ins>new site</ins> website to highlight things I've learned from my 8 month bootcamp @FullStack. It showcases imagery from past campaigns and projects in preparation future endeavors.
+In May 2025, I made the choice to develop a <del>temporary</del> <ins>new</ins> website to highlight things learned from my 8-month bootcamp @FullStack. It showcases imagery from past projects and campaigns in preparation for future endeavors.
